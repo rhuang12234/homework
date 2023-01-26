@@ -6,8 +6,18 @@
 # For numbers which are multiples of both 3 and 5 print “FizzBuzz”
 
 # Note: this is a common interview question
-
-
+for fizzbuzz in range(1, 101):
+	if fizzbuzz % 15 == 0:
+		print("Fizzbuzz")
+		continue
+	elif fizzbuzz % 3 == 0:
+		print("Fizz")
+		continue
+	elif fizzbuzz % 5 == 0:
+		print("Buzz")
+		continue
+	else: 
+		print(fizzbuzz)
 """
 python3 23fizzbuzz.py
 1
