@@ -5,6 +5,14 @@
 # Use the same loop for both calculations
 
 # Note: you may not import math or any other library
+n= 10
+sum = 0
+fact = 1
+for num  in range(1, n+1, 1):
+	sum += num
+	fact *= num
+print("Sum from 1 to", n, "is", sum)
+print("Factorial from 1 to", n, "is", fact)
 
 
 """
