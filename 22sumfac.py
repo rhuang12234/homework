@@ -11,8 +11,7 @@ fact = 1
 for num  in range(1, n+1, 1):
 	sum += num
 	fact *= num
-print("Sum from 1 to", n, "is", sum)
-print("Factorial from 1 to", n, "is", fact)
+print(n, sum, fact)
 
 
 """
