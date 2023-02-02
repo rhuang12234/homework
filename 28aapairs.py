@@ -6,8 +6,13 @@
 # Also print out how many combinations there are
 
 # Hint: if you get stuck for more than 10 minutes, get help
-
-
+AAlist = 'ACDEFGHIKLMNPQRSTVWY'
+combinations = 0
+for i in range(len(AAlist)):
+	for x in range(i + 1, len(AAlist)):
+		print(AAlist[i], AAlist[x])
+		combinations += 1
+print(combinations)
 """
 python3 28aapairs.py
 A C
