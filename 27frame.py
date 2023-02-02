@@ -8,7 +8,11 @@
 
 dna = 'ATGGCCTTT'
 
-
+for i in range(len(dna)):
+	position = i
+	frame = (i % 3)
+	base = dna[i]
+	print(position, frame, base)
 """
 python3 27frame.py
 0 0 A
