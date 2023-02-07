@@ -13,9 +13,9 @@
 
 seq = 'ACGACGCAGGAGGAGAGTTTCAGAGATCACGAATACATCCATATTACCCAGAGAGAG'
 w = 11
-for i in range(len(seq) - 11):
+for i in range(len(seq) - 10):
 	window = seq[i:i + 11]
-	windownumber = i + 1
+	windownumber = i
 	gc = 0
 	for base in window:
 		if base == 'G' or base == 'C':
