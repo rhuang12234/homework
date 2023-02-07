@@ -28,9 +28,7 @@ for i in range(size):
 		else:
 			dna += 'G'
 newpercentAT = countAT / size
-print(len(dna))
-print(newpercentAT)
-print(dna)
+print(len(dna), newpercentAT, dna)
 """
 python3 25atseq.py
 30 0.6666666666666666 ATTACCGTAATCTACTATTAAGTCACAACC
