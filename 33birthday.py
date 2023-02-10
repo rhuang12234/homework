@@ -19,7 +19,7 @@ days = box[0]
 people = box[1]
 
 probability = 1
-for sims in range (people):
+for sims in range(people):
 	probability *= (days - sims) / days
 probability = 1 - probability
 print('{:.4}'.format(probability))
