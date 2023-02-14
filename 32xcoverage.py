@@ -16,32 +16,31 @@
 import random
 import sys
 
-genomesize = int(sys.argv[1])
-readnumber = int(sys.argv[2])
-readlength = int(sys.argv[3])
+gsize = int(sys.argv[1])
+rnumber = int(sys.argv[2])
+rlength = int(sys.argv[3])
 
 reads = []
-for i in range(readnumber):
-	start = random.randint(0, genomesize - readlength)
-	reads.append((start, start + readlength))
+for i in range(rnumber):
+	beginning = random.randint(0, gsize - rlength)
+	reads.append((beginning, beginning + rlength))
 
-coverage = [0] * genomesize
+coverage = [0] * gsize
 for read in reads:
 	for i in range(read[0], read[1]):
 		coverage[i] += 1
 
-mincoverage = coverage[0]
-maxcoverage = coverage[0]
-sumcoverage = 0
-
-for i in range(genomesize):
-	if coverage[i] < mincoverage:
-		mincoverage = coverage[i]
-	elif coverage[i] > maxcoverage:
-		maxcoverage = coverage[i]
-	sumcoverage += coverage[i]
-avgcoverage = sumcoverage / genomesize
-print(mincoverage, maxcoverage,'{:.4}'.format(avgcoverage))
+minC = coverage[0]
+maxC = coverage[0]
+sumC = 0
+for i in range(gsize):
+	if coverage[i] < minC:
+		minC = coverage[i]
+	elif coverage[i] > maxC:
+		maxC = coverage[i]
+	sumC += coverage[i]
+avgC = sumC / gsize
+print(minC, maxC,'{:.4}'.format(avgC))
 """
 python3 32xcoverage.py 1000 100 100
 5 20 10.82375
