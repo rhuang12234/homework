@@ -10,7 +10,6 @@
 # Variation: try making the calendar a list
 # Variation: try making the birthdays a list
 import sys
-import math
 box = []
 for stuff in sys.argv[1:]:
 	box.append(int(stuff))
