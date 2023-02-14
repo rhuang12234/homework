@@ -16,12 +16,13 @@ box = []
 for stuff in sys.argv[1:]:
 	box.append(float(stuff))
 
+assert(math.isclose(sum(box), 1.0))
+
 summ = 0
 for freq in box:
 	summ += -(freq * math.log2(freq))
 print('{:.4}'.format(summ))
 
-assert(math.isclose(sum(box), 1.0))
 """
 python3 31entropy.py 0.1 0.2 0.3 0.4
 1.846
