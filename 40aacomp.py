@@ -8,6 +8,33 @@
 
 # Variation: use 20 named variables
 # Variation: use a list
+import gzip
+import sys
+
+aminoacids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
+
+aa_counts = {}
+for aa in aminoacids:
+	aa_counts[aa] = 0
+
+with gzip.open(sys.argv[1], 'rt') as fp:
+	sequence = ''
+	for line in fp:
+		if line.startswith('>'):
+			if sequence:
+				for aa in aminoacids:
+					aa_counts[aa] += sequence.count(aa)
+			sequence = ''
+		else:
+			sequence += line.strip()
+	for aa in aminoacids:
+		aa_counts[aa] += sequence.count(aa)
+total = 0
+for aa in aminoacids:
+	count = aa_counts[aa]
+	total += count
+	frequency = aa_counts[aa] / total
+	print(f'{aa}: {count} ({frequency:.4f}%)')
 
 
 """
