@@ -12,26 +12,25 @@ import gzip
 import sys
 
 aminoacids = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y']
-aa_counts = [0] * 20
+counts = [0] * len(aminoacids)
 total = 0
 with gzip.open(sys.argv[1], 'rt') as fp:
 	sequence = ''
 	for line in fp:
 		if line.startswith('>'):
-			if sequence:
-				for i in range(len(aminoacids)):
-					aa = aminoacids[i]
-					aa_counts[i] += sequence.count(aa)
-					total += sequence.count(aa)
-			sequence = ''
-		else:
-			sequence += line.strip()
-
+			continue
+		line = line.strip()
+		for i in range(len(aminoacids)):
+			aa = aminoacids[i]
+			count = line.count(aa)
+			counts[i] += count
+			total += count
+			
 for i in range(len(aminoacids)):
-	aa = aminoacids[i]
-	count = aa_counts[i]
-	frequency = count / total
-	print(f'{aa}: {count} ({frequency:.4f}%)')
+	aa  = aminoacids[i]
+	count = counts[i]
+	percent = count / total
+	print(f'{aa}: {count} ({percent:.4f}%)')
 """
 python3 40aacomp.py ~/DATA/E.coli/GCF_000005845.2_ASM584v2_protein.faa.gz
 A 126893 0.0954
