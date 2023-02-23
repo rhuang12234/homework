@@ -19,7 +19,6 @@ with gzip.open(sys.argv[1], 'rt') as fp:
 	for line in fp:
 		if line.startswith('>'):
 			continue
-		line = line.strip()
 		for i in range(len(aminoacids)):
 			aa = aminoacids[i]
 			count = line.count(aa)
