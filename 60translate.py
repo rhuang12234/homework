@@ -63,6 +63,5 @@ SGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWIGGSILASLSTFQQMWISK\
 QEYDESGPSIVHRKCF*\
 " 
 
-dna = 'ATGAAATAG'
 translation = translate_dna(actin_cds.upper())
 print(translation)
